@@ -30,22 +30,11 @@ class EmailValidatorTest {
 
 	@Test
 	void checkEmailDomainSuccess() {
-		assertTrue(emailValidator.checkDomain("test@gmail.com"));
+		assertTrue(emailValidator.checkDomainAndTLD("test@gmail.com"));
 	}
 
 	@Test
 	void checkEmailDomainFail() {
-		assertFalse(emailValidator.checkDomain("test@.com"));
+		assertFalse(emailValidator.checkDomainAndTLD("test@"));
 	}
-
-	@Test
-	void checkEmailTLDSuccess() {
-		assertTrue(emailValidator.checkTLD("test@gmail.com"));
-	}
-
-	@Test
-	void checkEmailTLDFail() {
-		assertFalse(emailValidator.checkTLD("test@gmail"));
-	}
-
 }

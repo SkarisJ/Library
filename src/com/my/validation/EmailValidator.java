@@ -10,11 +10,7 @@ public class EmailValidator {
 		return true;
 	}
 
-	public boolean checkDomain(String email) {
-		return true;
-	}
-
-	public boolean checkTLD(String email) {
+	public boolean checkDomainAndTLD(String email) {
 		return true;
 	}
 }
