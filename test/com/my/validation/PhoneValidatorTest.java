@@ -20,13 +20,13 @@ public class PhoneValidatorTest {
 
 	// tikrina, kai reikia pakeisti is 8 i +370
 	@Test
-	void checkFirstNumberChangeTest() {
+	void checkFirstNumberWithChangeTest() {
 		assertEquals("+37062847379", phoneValidator.checkFirstNumber("862847379"));
 	}
 
 	// tikrina, kai nereikia pakeisti is 8 i +370
 	@Test
-	void checkFirstNumberNoChangeTest() {
+	void checkFirstNumberWithoutChangeTest() {
 		assertEquals("+37062847379", phoneValidator.checkFirstNumber("+37062847379"));
 	}
 }
