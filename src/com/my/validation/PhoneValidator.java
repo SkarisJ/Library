@@ -3,15 +3,13 @@ package com.my.validation;
 public class PhoneValidator {
 
 	public boolean checkPhoneNumber(String phoneNumber) {
-		return true;
+		return false;
 	}
-	
-	public boolean checkFirstNumber(String phoneNumber) {
-		return true;
-	}
-	
-	public String adjustPhoneNumber(String phoneNumber, String length, String prefix) {
-		
+
+	public String checkFirstNumber(String phoneNumber) {
 		return phoneNumber;
+	}
+
+	public void addPhonePrefix(String length, String prefix) {
 	}
 }

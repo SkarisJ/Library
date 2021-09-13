@@ -4,11 +4,29 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class PhoneValidatorTest {
+public class PhoneValidatorTest {
+
+	PhoneValidator phoneValidator = new PhoneValidator();
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void checkPhoneNumberTestSuccess() {
+		assertTrue(phoneValidator.checkPhoneNumber("+37062847379"));
 	}
 
+	@Test
+	void checkPhoneNumberTestFail() {
+		assertFalse(phoneValidator.checkPhoneNumber("+3706284737R"));
+	}
+
+	// tikrina, kai reikia pakeisti is 8 i +370
+	@Test
+	void checkFirstNumberChangeTest() {
+		assertEquals("+37062847379", phoneValidator.checkFirstNumber("862847379"));
+	}
+
+	// tikrina, kai nereikia pakeisti is 8 i +370
+	@Test
+	void checkFirstNumberNoChangeTest() {
+		assertEquals("+37062847379", phoneValidator.checkFirstNumber("+37062847379"));
+	}
 }
