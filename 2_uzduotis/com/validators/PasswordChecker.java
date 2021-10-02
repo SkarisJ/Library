@@ -4,11 +4,11 @@ import java.util.Set;
 
 public class PasswordChecker {
 
-	String _specialCharacters;
+	Set<Character> _specialCharacters;
 	int _minLength;
 
 	public PasswordChecker(Set<Character> specialCharacters, Integer minLength) {
-		_specialCharacters = specialCharacters.toString();
+		_specialCharacters = specialCharacters;
 		_minLength = minLength;
 	}
 
@@ -33,11 +33,18 @@ public class PasswordChecker {
 	}
 
 	private boolean validateSpecialSymbols(String password) {
+		
+		String specialCharacters = _specialCharacters.toString();
+		
 		for (char symbol : password.toCharArray()) {
-			if (!Character.isLetterOrDigit(symbol) && _specialCharacters.contains(String.valueOf(symbol))) {
+			if (!Character.isLetterOrDigit(symbol) && specialCharacters.contains(String.valueOf(symbol))) {
 				return true;
 			}
 		}
 		return false;
+	}
+	
+	private void addSpecialCharacters(Character character) {
+		_specialCharacters.add(character);
 	}
 }
