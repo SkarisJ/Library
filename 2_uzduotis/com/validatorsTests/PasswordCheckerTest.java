@@ -1,4 +1,4 @@
-package com.validation;
+package com.validatorsTests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
